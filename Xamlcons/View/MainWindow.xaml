@@ -1,0 +1,41 @@
+﻿<Window x:Class="Xamlcons.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:local="clr-namespace:Xamlcons"
+        mc:Ignorable="d"
+        Title="XamIcons" Height="450" Width="800" Icon="../XI.png">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" >
+            <Image Width="100" Stretch="Uniform" Margin="20" Source="pack://application:,,,/XamIcons.png"/>
+            <hc:SideMenu Width="200">
+                <hc:SideMenuItem Header="Basic" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}" IsSelected="True"/>
+                <hc:SideMenuItem Header="HandyControl" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}" IsSelected="True"/>
+                <hc:SideMenuItem Header="ModernUI" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}"/>
+                <hc:SideMenuItem Header="Windows10" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}"/>
+                <hc:SideMenuItem Header="FontAwesome Solid" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}"/>
+                <hc:SideMenuItem Header="FontAwesome Regular" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}"/>
+                <hc:SideMenuItem Header="FontAwesome Brand" Command="{Binding MenuSelection}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}"/>
+            </hc:SideMenu>
+        </StackPanel>
+        <DockPanel>
+            <ListBox ItemsSource="{Binding IconList}" Style="{DynamicResource WrapPanelHorizontalListBox}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <hc:Card Style="{StaticResource BasicCard}">
+                            <hc:Card.Header>
+                                <TextBlock Text="{Binding Name}" Margin="5"/>
+                            </hc:Card.Header>
+                            <Button hc:IconElement.Geometry="{Binding Data}" Margin="10" BorderThickness="0" Background="#0000"/>
+                            <hc:Card.Footer>
+                                <Button Content="Copy Xaml in ClipBoard" Command="{Binding DataContext.Copy, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DockPanel}}}" Margin="5" CommandParameter="{Binding}"/>
+                            </hc:Card.Footer>
+                        </hc:Card>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </DockPanel>
+</Window>

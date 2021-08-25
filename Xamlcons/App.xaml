@@ -1,0 +1,26 @@
+﻿<Application x:Class="Xamlcons.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:Xamlcons"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/IconsDictionnaries/Basic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/IconsDictionnaries/ModernUI.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/IconsDictionnaries/FontAwesome.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/IconsDictionnaries/Windows10.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--Style-->
+            <Style x:Key="BasicCard" TargetType="hc:Card" BasedOn="{StaticResource CardBaseStyle}">
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="MinWidth" Value="150"/>
+                <Setter Property="MinHeight" Value="70"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
