@@ -6,9 +6,9 @@
       <UseWpf>true</UseWpf>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HandyControl">
-      <HintPath>..\..\..\HandyControl-v3.1.0-Release\net48\HandyControl.dll</HintPath>
-    </Reference>
+       <PackageReference Include="HandyControl" Version="3.2.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
