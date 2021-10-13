@@ -32,7 +32,7 @@ namespace Xamlcons.ViewModel
 
         private void CopyToClipBoard(GeometryItem icon)
         {
-            string xamlGeometry = String.Format("<Geometry x:Key=\"{0}\">{1}</Geometry>", icon.Name, icon.Data.ToString());
+            string xamlGeometry = String.Format("<Geometry x:Key=\"{0}\">{1}</Geometry>", icon.Name, icon.Data.ToString().Replace(",", ".").Replace(";", ","));
             Clipboard.SetData(DataFormats.Text, (Object)xamlGeometry);
         }
 
