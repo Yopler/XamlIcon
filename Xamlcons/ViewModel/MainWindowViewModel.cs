@@ -1,10 +1,8 @@
 ﻿using HandyControl.Tools;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -32,8 +30,8 @@ namespace Xamlcons.ViewModel
 
         private void CopyToClipBoard(GeometryItem icon)
         {
-            string xamlGeometry = String.Format("<Geometry x:Key=\"{0}\">{1}</Geometry>", icon.Name, icon.Data.ToString().Replace(",", ".").Replace(";", ","));
-            Clipboard.SetData(DataFormats.Text, (Object)xamlGeometry);
+            string xamlGeometry = string.Format("<Geometry x:Key=\"{0}\">{1}</Geometry>", icon.Name, icon.Data.ToString());
+            Clipboard.SetData(DataFormats.Text, xamlGeometry);
         }
 
         private void MenuSelectionOnChange(string selection)
